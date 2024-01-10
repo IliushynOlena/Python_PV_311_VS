@@ -63,16 +63,16 @@
 # Наприклад, три — це просте число, а 
 # чотири — ні.
 
-# counter = 0
-# number = int(input("Enter number :"))#100
-# for i in range(1,number + 1):#5/1 5/2 5/3 5/4 5/5
-#     if number%i == 0:
-#         counter+=1
+counter = 0
+number = int(input("Enter number :"))#100
+for i in range(1,number + 1):#5/1 5/2 5/3 5/4 5/5
+    if number%i == 0:
+        counter+=1
         
-# if counter > 2:
-#     print("prime")
-# else :
-#     print("simple")
+if counter > 2:
+    print("prime")
+else :
+    print("simple")
 
 # flag = True
 # number = int(input("Enter number :"))#10
@@ -95,6 +95,7 @@
 
 
 # number = int(input("Enter number :"))#10
+# number = 1001
 # for i in range(2,number//2 + 1):#10/2 5/2 5/3 5/4 5/5
 #     if number%i == 0:
 #         print("prime")
@@ -102,10 +103,14 @@
 # else :
 #     print("simple")
 
-for i in range(7):
-    for j in range(7):
-        print('* ',end='')
-    print()
+# for i in range(7):
+#     for j in range(7):
+#         print('* ',end='')
+#     print()
+
+for i in range(1,255):
+    print(chr(i), end=" ")
+print(chr(9580))
     
 
         
