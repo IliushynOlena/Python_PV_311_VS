@@ -120,6 +120,7 @@ print(ord('Z'))
 print(chr(9829))
 print(chr(9556))
 print(chr(9552)*5)
+
 for i in range(5):
     print(chr(9552), end="")
 
