@@ -14,6 +14,9 @@
 # marks = [12,7,8,9,6,12,11,10,5,3,1]
 # courses = list(("Math","Database", "Algorithms"))
 
+bye = []
+
+
 # print(category)
 # print(marks)
 # print(courses)
@@ -163,3 +166,14 @@ for i in range(len(colors)):
 
 colors.clear()
 print(colors)
+
+marks = [12,7,8,9,6,12,11,10,5,3,1]
+
+max = marks[0]
+indexMax = 0
+min = marks[0]
+indexMin = 0
+for i in range(len(marks)):
+    if marks[i] > max:
+        max = marks[i]
+        indexMax = i
