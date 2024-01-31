@@ -207,7 +207,7 @@ img = [
 ]
 words = ['summer', 'winter','egg','programming']
 word = random.choice(words)
-print(word)
+#print(word)
 
 answer = ['_' for i in word]
 print(' '.join(answer))
@@ -215,6 +215,7 @@ wrong = 0
 counter = len(word)#11
 
 while counter != 0 and wrong != 6:
+    print(img[wrong])
     s = input("Enter letter ---> ")
     if len(s) != 1:
         print("Error")
@@ -231,6 +232,12 @@ while counter != 0 and wrong != 6:
         answer[index] = s
         index = word.find(s, index+1)
     print(' '.join(answer))
+    
+if wrong == 6:
+    print("Game over!!!")
+    print(img[wrong])
+else:
+    print("Congratulation !!! You won!!!")
     
 
 
