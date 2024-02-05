@@ -1,241 +1,89 @@
-space = [6, 12, 27, 16, 15]
+print("Zavdania_1")
+def increase_between_max_min(list):
+  max_value = list[0]
+  min_value = list[0]
+  max_index = 0
+  min_index = 0
+  for i, value in enumerate(list):
+    if value > max_value:
+      max_value = value
+      max_index = i
+    elif value < min_value:
+      min_value = value
+      min_index = i
 
-title = [
-    2,
-    "No",
-    2,
-    4,
-    "Item",
-    4,
-    8,
-    'Description',
-    8,
-    4,
-    'Quantity',
-    4,
-    5,
-    'Price',
-    5,
+  for i in range(min_index + 1, max_index):
+    list[i] *= 2
+
+  return list
+
+list = [1, 5, 3, 7, 2, 4, 6]
+print(f"Список до оновлення: {list}")
+updated_list = increase_between_max_min(list)
+print(f"Список після оновлення: {updated_list}")
+
+
+
+
+print("Zavdania_2")
+def swap_elements_pairwise(list):
+    for i in range(0, len(list)-1, 2):
+        list[i], list[i+1] = list[i+1], list[i]
+
+my_list = [1, 2, 3, 4, 5, 6]
+print("Original list:", my_list)
+
+swap_elements_pairwise(my_list)
+print("List after swapping elements pairwise:", my_list)
+
+
+
+
+
+
+# print("Zavdania_3")
+# def find_duplicates(list):
+#     duplicates = set()
+#     unique_elements = set()
+
+#     for element in list:
+#         if element in unique_elements:
+#             duplicates.add(element)
+#         else:
+#             unique_elements.add(element)
+
+#     return list(duplicates)
+
+# my_list = [1, 2, 3, 4, 5, 2, 6, 3, 7, 8, 8]
+# duplicates = find_duplicates(my_list)
+# print("Original list:", my_list)
+# print("Duplicate values in the list:", duplicates)
+
+
+
+
+print("Zavdania_4")
+def calculate_sums(matrix):
+    rows_sum = [sum(row) for row in matrix]
+
+    columns_sum = [sum(column) for column in zip(*matrix)]
+
+    total_sum = sum(sum(row) for row in matrix)
+
+    return rows_sum, columns_sum, total_sum
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
 
-arr = [
-    {'number': '1', 'item': 'P196', 'description': 'Sansung Color TV', 'quantity': '1', 'price': '829.00'},
-    {'number': '2', 'item': 'P020', 'description': 'Uniden Handset', 'quantity': '1', 'price': '29.00'},
-    {'number': '3', 'item': 'p111', 'description': 'Folder Blank', 'quantity': '1', 'price': '2.70'},
-]
+rows_sum, columns_sum, total_sum = calculate_sums(matrix)
 
-arr_title = ['number', 'item', 'description', 'quantity', 'price']
+print("Matrix:")
+for row in matrix:
+    print(row)
 
-arr_spase = [6, 12, 23, 16, 15]
-
-stop_execution = False
-
-while not stop_execution:
-    # 1
-    print(chr(9484), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(chr(9472), end='')
-        print(chr(9516), end='')
-    for i in range(space[4]):
-        print(chr(9472), end='')
-    print(chr(9488))
-
-    # 2
-    # space_row
-    print(chr(9474), end='')
-    print(chr(9474), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(' ', end='')
-        print(chr(9474), end='')
-    for i in range(space[4]):
-        print(' ', end='')
-    print(chr(9474))
-
-    # 3
-    i = 0
-    while i <= len(title) - 1:
-        print(chr(9474), end='')
-        for j in range(title[i]):
-            print(' ', end='')
-        i += 1
-        print(title[i], end='')
-        i += 1
-        for k in range(title[i]):
-            print(' ', end='')
-        i += 1
-    print(chr(9474))
-
-    # 4
-    # space_row
-    print(chr(9474), end='')
-    print(chr(9474), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(' ', end='')
-        print(chr(9474), end='')
-    for i in range(space[4]):
-        print(' ', end='')
-    print(chr(9474))
-
-    # 5
-    print(chr(9500), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(chr(9472), end='')
-        print(chr(9532), end='')
-    for i in range(space[4]):
-        print(chr(9472), end='')
-    print(chr(9508))
-
-    # 6
-    # space_row
-    print(chr(9474), end='')
-    print(chr(9474), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(' ', end='')
-        print(chr(9474), end='')
-    for i in range(space[4]):
-        print(' ', end='')
-    print(chr(9474))
-
-    # 7
-    for e in arr:
-        for i, key in enumerate(['number', 'item', 'description', 'quantity', 'price']):
-            print(chr(9474), end='')
-
-            if key == "price":
-                formatted_price = f'$ {float(e[key]):6.2f}'
-                print(f'{formatted_price:^{arr_spase[i]}}', end='', sep='')
-            elif key == 'description':
-                for j in range(4):
-                    print(' ', end='')
-                print(f'{e[key]:<{arr_spase[i]}}', end='', sep='')
-
-            else:
-                print(f'{e[key]:^{arr_spase[i]}}', end='', sep='')
-        print(chr(9474))
-
-    # 8
-    for i in range(13 - len(arr)):
-        # space_row
-        print(chr(9474), end='')
-        print(chr(9474), end='')
-        for i in range(4):
-            for j in range(space[i]):
-                print(' ', end='')
-            print(chr(9474), end='')
-        for i in range(space[4]):
-            print(' ', end='')
-        print(chr(9474))
-
-    # 9
-    print(chr(9500), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(chr(9472), end='')
-        print(chr(9532), end='')
-    for i in range(space[4]):
-        print(chr(9472), end='')
-    print(chr(9508))
-
-    # 10
-    # space_row
-    print(chr(9474), end='')
-    print(chr(9474), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(' ', end='')
-        print(chr(9474), end='')
-    for i in range(space[4]):
-        print(' ', end='')
-    print(chr(9474))
-
-    # 11
-    v = 0
-    q = 0
-    p = 0
-    for e in arr:
-        for i, key in enumerate(['number', 'item', 'description', 'quantity', 'price']):
-            if key == 'number':
-                if v < int(e[key]):
-                    v = int(e[key])
-            elif key == 'quantity':
-                q += int(e[key])
-            elif key == 'price':
-                p += float(e[key])
-
-    for e in arr[0]:
-        for i, key in enumerate(['number', 'item', 'description', 'quantity', 'price']):
-            print(chr(9474), end='')
-            match key:
-                case 'number':
-                    print(f'{v:^{arr_spase[i]}}', end='', sep='')
-                case 'item':
-                    print(f'{"":^{arr_spase[i]}}', end='', sep='')
-                case 'description':
-                    for j in range(4):
-                        print(' ', end='')
-                    print(f'{"":^{arr_spase[i]}}', end='', sep='')
-                case 'quantity':
-                    print(f'{q:^{arr_spase[i]}}', end='', sep='')
-                case "price":
-                    print(f'{p:^{arr_spase[i]}}', end='', sep='')
-        print(chr(9474))
-        break
-
-    # space_row
-    print(chr(9474), end='')
-    print(chr(9474), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(' ', end='')
-        print(chr(9474), end='')
-    for i in range(space[4]):
-        print(' ', end='')
-    print(chr(9474))
-
-    # 13
-    print(chr(9492), end='')
-    for i in range(4):
-        for j in range(space[i]):
-            print(chr(9472), end='')
-        print(chr(9524), end='')
-    for i in range(space[4]):
-        print(chr(9472), end='')
-    print(chr(9496))
-
-    # Мої додуми))
-    while True:
-        quest = input('Want to supplement the plate? YES - y or NO - n:  ')
-
-        match quest:
-            case 'y':
-                while True:
-                    item = input("Enter item: ")
-                    description = input("Enter description: ")
-                    quantity = input("Enter quantity: ")
-                    price = input("Enter price: ")
-
-                    if not item or not description or not quantity or not price:
-                        break
-
-                    v += 1
-                    v = str(v)
-
-                    arr.append({
-                        'number': v.strip(),
-                        'item': item.strip(),
-                        'description': description.strip(),
-                        'quantity': quantity.strip(),
-                        'price': price.strip(),
-                    })
-                    break
-                break
-            case 'n':
-                stop_execution = True
-                break
-            case _:
-                continue
+print("\nSum of elements in each row:", rows_sum)
+print("Sum of elements in each column:", columns_sum)
+print("Total sum of all elements in the matrix:", total_sum)

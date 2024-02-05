@@ -88,6 +88,21 @@ print("\033[34m\033[44m\033[4m{}\033[0m".format(numbers),end=" ")
 
 for i in range(10):
     print('*',end=' ')
+    
+    
+number = 123456
+a1 = number//100000
+print(a1)
+a2 =number//10000%10
+print(a2)
+a3 = number//1000%10
+print(a3)
+# a4 = 
+# print(a4)
+# a5 = 
+# print(a5)
+# a6 = 
+# print(a6)
 
     
 

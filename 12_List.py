@@ -117,6 +117,7 @@ for item in colors:
     print(item, end=" ")
 print()  
  
+colors[0]= "grey"
 colors.append("orange")
 print(colors)
 color = ['white','red','broun']
