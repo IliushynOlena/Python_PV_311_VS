@@ -42,6 +42,7 @@ try:
 except ValueError:
     print("Value Error!!! You need to enter number")
 except IndexError:
+    #pass
     print("Index was out of range")
 except Exception:
     print("Error")
