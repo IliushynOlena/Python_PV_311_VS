@@ -64,14 +64,19 @@ lines = ['Sed volutpat nisi in vestibulum congue.',
 #         # print(file.readable())
 #         # print(file.writable())
 #         file.write(str(555))
-import re
-line = ''
-with open("19_WorkWithFile/my.txt") as file:
-        line = file.read()
+# import re
+# line = ''
+# with open("../19_WorkWithFile/my.txt") as file:
+#         line = file.read()
+        
+# print(line.count("\n"))
 
-print(re.split("[,.? ]", line))
-words = re.split("[,.? ]", line)
-for word in words:
-    if len(word) >= 7:
-        print(word)
+# print(re.split("[,.? ]", line))
+# words = re.split("[,.? ]", line)
+# for word in words:
+#     if len(word) >= 7:
+#         print(word)
     
+url_write = r"..\Python_PV_311\19_WorkWithFile\write_test.txt"
+with open(url_write,'a') as file:
+    file.write("Hello world\n")

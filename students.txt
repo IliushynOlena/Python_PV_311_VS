@@ -1,0 +1,1 @@
+{"name": "Olena", "lastname": "Iliushyn", "rating": 11.8, "group": "PV311", "birthday": "01.01.2001"}
