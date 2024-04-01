@@ -1,0 +1,20 @@
+{
+  "apartments": [],
+  "requests": [
+    {
+      "id": 1,
+      "client_name": "hhh",
+      "client_address": "hhh",
+      "client_phone": "333",
+      "date": "2000-12-30",
+      "apartment_details": {
+        "area": 33.0,
+        "rooms": 33,
+        "floor": 33,
+        "district": "33",
+        "price": 33.0
+      },
+      "request_type": "33"
+    }
+  ]
+}

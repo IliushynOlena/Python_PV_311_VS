@@ -68,7 +68,7 @@ print(list1)
 for i in range(len(list1)):
         #print(users[i])
     for key in  list1[i].keys():
-        print(f"Id : {key:<10} . Name : {list1[i][key]}. Age : {list1[i][key]}")
+        print(f"Id : {key:<10} . Name : {list1[i][key]}")
 
 # list1.pop(1)
 
